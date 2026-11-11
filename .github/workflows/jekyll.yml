@@ -46,6 +46,10 @@ jobs:
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v6.0.0
+        with:
+          # Enable GitHub Pages on this repository if it is not already set up,
+          # and configure it to build and deploy from GitHub Actions.
+          enablement: true
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
